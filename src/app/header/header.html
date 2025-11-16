@@ -1,4 +1,4 @@
-<header class="bg-primary text-surface-0">
+<header class="bg-primary text-surface-0 min-h-screen">
   <!-- NAVBAR -->
   <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
 
@@ -14,10 +14,13 @@
       <li><a href="#pricing" class="hover:text-gray-200">Preços</a></li>
       <li>
         <a href="#contact"
-           class="bg-white text-surface-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+           class="bg-surface-50 text-surface-900 px-4 py-2 rounded-lg font-semibold hover:bg-surface-300 transition">
           Contato
         </a>
       </li>
+      <li><p-button (onClick)="toggleDarkMode()">
+            <i [ngClass]="darkMode ? 'pi pi-sun' : 'pi pi-moon'"></i>
+                    </p-button></li>
     </ul>
 
     <!-- Mobile Menu Icon -->
@@ -31,7 +34,7 @@
     <a href="#features" class="block hover:text-gray-200">Recursos</a>
     <a href="#about" class="block hover:text-gray-200">Sobre</a>
     <a href="#pricing" class="block hover:text-gray-200">Preços</a>
-    <a href="#contact" class="block bg-white text-surface-600 px-4 py-2 rounded-lg font-semibold text-center">
+    <a href="#contact" class="block bg-white text-surface-900 px-4 py-2 rounded-lg font-semibold text-center">
       Contato
     </a>
   </div>
@@ -45,7 +48,7 @@
       Crie páginas incríveis, atraia mais clientes e aumente suas conversões.
     </p>
     <a href="#start"
-       class="bg-white text-surface-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition">
+       class="bg-surface-50 text-surface-900 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-surface-300 transition animate-leave animate-duration-700">
       Começar Agora
     </a>
   </div>

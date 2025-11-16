@@ -1,56 +1,64 @@
-//mypreset.ts
+// mypreset.ts
 import { definePreset } from '@primeuix/themes';
 import Aura from '@primeuix/themes/aura';
 
-const MyPreset = definePreset(Aura, {
-    semantic: {
-        colorScheme: {
-            light: {
-             primary: {
-            50: '{emerald.50}',
-            100: '{emerald.100}',
-            200: '{emerald.200}',
-            300: '{emerald.300}',
-            400: '{emerald.400}',
-            500: '{emerald.500}',
-            600: '{emerald.600}',
-            700: '{emerald.700}',
-            800: '{emerald.800}',
-            900: '{emerald.900}',
-            950: '{emerald.950}'
-        },
-                surface: {
-                    0: '#ffffff',
-                    50: '{zinc.50}',
-                    100: '{zinc.100}',
-                    200: '{zinc.200}',
-                    300: '{zinc.300}',
-                    400: '{zinc.400}',
-                    500: '{zinc.500}',
-                    600: '{zinc.600}',
-                    700: '{zinc.700}',
-                    800: '{zinc.800}',
-                    900: '{zinc.900}',
-                    950: '{zinc.950}'
-                }
-            },
-            dark: {
-                surface: {
-                    0: '#ffffff',
-                    50: '{slate.50}',
-                    100: '{slate.100}',
-                    200: '{slate.200}',
-                    300: '{slate.300}',
-                    400: '{slate.400}',
-                    500: '{slate.500}',
-                    600: '{slate.600}',
-                    700: '{slate.700}',
-                    800: '{slate.800}',
-                    900: '{slate.900}',
-                    950: '{slate.950}'
-                }
-            }
-        }
-    }
+const generateShades = (color: string) => ({
+  50: `{${color}.50}`,
+  100: `{${color}.100}`,
+  200: `{${color}.200}`,
+  300: `{${color}.300}`,
+  400: `{${color}.400}`,
+  500: `{${color}.500}`,
+  600: `{${color}.600}`,
+  700: `{${color}.700}`,
+  800: `{${color}.800}`,
+  900: `{${color}.900}`,
+  950: `{${color}.950}`
 });
+
+const MyPreset = definePreset(Aura, {
+  semantic: {
+    colorScheme: {
+      light: {
+        // Cor principal: azul-água para destaque
+        primary: generateShades('emerald'),
+        // Superfícies
+        surface: {
+          0: '#ffffff',       // fundo principal
+          50: '#f9fafb',      // fundo de cards
+          100: '#f3f4f6',     // seções
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',     // textos secundários
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',     // textos principais
+          900: '#111827',
+          950: '#0a0e16'
+        }
+      },
+      dark: {
+        // Cor principal: azul-ciano escuro para contraste
+        primary: generateShades('emerald'),
+        // Superfícies
+        surface: {
+          0: '#121212',       // fundo principal
+          50: '#1a1a1a',      // fundo de cards
+          100: '#222222',     // seções
+          200: '#2c2c2c',
+          300: '#383838',
+          400: '#4b4b4b',
+          500: '#616161',     // textos secundários
+          600: '#757575',
+          700: '#9e9e9e',
+          800: '#cfcfcf',     // textos principais
+          900: '#f5f5f5',
+          950: '#fafafa'
+        }
+      }
+    }
+  }
+});
+
 export default MyPreset;
